@@ -7,12 +7,12 @@ var express = require('express'),
 
 router
 	.get('/', passport.authenticate('nus-openid', {
-		failureRedirect: '/signup', // this is an absolute path
+		failureRedirect: '/login', // this is an absolute path
 		session: false
 	}))
 
 	.get('/return', passport.authenticate('nus-openid', {
-		failureRedirect: '/signup',
+		failureRedirect: '/login',
 		session: false
 	}), auth.setTokenCookie);
 

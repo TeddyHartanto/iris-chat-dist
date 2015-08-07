@@ -9,7 +9,7 @@ module.exports.setup = function(User, config) {
 	},
 	function(identifier, profile, done){
 		User.findOne({
-			'nusOpenId.id': identifier
+			'nusOpenId': identifier
 		},
 		function (err, user) {
 			if (err) {
