@@ -3,8 +3,8 @@ var passport = require('passport'),
 
 module.exports.setup = function(User, config) {
 	passport.use(new NusStrategy({
-		returnURL: config.nusOpenId.returnURL,
-		realm: config.nusOpenId.realm,
+		returnURL: 'http://localhost:8080/auth/nus-openid/return',
+		realm: 'http://localhost:8080',
 		profile: true
 	},
 	function(identifier, profile, done){
