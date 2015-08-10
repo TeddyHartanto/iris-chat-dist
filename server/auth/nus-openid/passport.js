@@ -3,8 +3,8 @@ var passport = require('passport'),
 
 module.exports.setup = function(User, config) {
 	passport.use(new NusStrategy({
-		returnURL: config.nusOpenId.returnURL,
-		realm: config.nusOpenId.realm,
+		returnURL: 'http://irischat.me/auth/nus-openid/return',
+		realm: 'http://irischat.me',
 		profile: true
 	},
 	function(identifier, profile, done){
