@@ -16,6 +16,7 @@ exports.register = function(socketio, socket) {
 				if (err) { console.log(err); }
 			});
 		});
+		socketio.to(socket.rooms[1]).emit('leaveRoom');
 		socket.leave(socket.rooms[1]);
 	});
 	socket.on('sendMessage', function(message) {
